@@ -14,7 +14,8 @@
 		"next": "9.4.4",
 		"next-images": "^1.4.1",
 		"react": "16.13.1",
-		"react-dom": "16.13.1"
+		"react-dom": "16.13.1",
+		"react-material-ui-carousel": "^1.8.1"
 	},
 	"prettier": {
 		"arrowParens": "avoid",
@@ -24,6 +25,7 @@
 		"trailingComma": "none"
 	},
 	"devDependencies": {
+		"faker": "^4.1.0",
 		"prettier": "^2.0.5"
 	}
 }
