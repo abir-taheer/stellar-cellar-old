@@ -8,6 +8,8 @@ import StandardContainer from "../ui/StandardContainer";
 import { Typography } from "@material-ui/core";
 
 import faker from "faker";
+import Map from "../comps/Map";
+import Link from "next/link";
 
 const useStyles = makeStyles(theme => ({
 	galleryImage: {
@@ -57,14 +59,19 @@ function Gallery(props) {
 
 			<br />
 			<StandardContainer>
+				<Link href={"/"}>
+					<Button variant={"outlined"}>&lt;- Back To Home</Button>
+				</Link>
 				<Typography variant={"h3"} style={{ textAlign: "center" }}>
-					XXX Doors
+					{faker.random.word()} Doors
 				</Typography>
 				<br />
 				<Typography paragraph style={{ textAlign: "center" }}>
 					{faker.lorem.words(160)}
 				</Typography>
 			</StandardContainer>
+			<br />
+			<Map />
 		</div>
 	);
 }

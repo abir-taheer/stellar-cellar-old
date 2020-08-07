@@ -13,6 +13,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import React from "react";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
+import Map from "../comps/Map";
 
 const useStyles = makeStyles({
 	bodyText: {
@@ -46,7 +47,7 @@ export default function Home() {
 			<Landing />
 
 			<StandardContainer className={classes.bodyText}>
-				<Typography variant={"body1"}>
+				<Typography variant={"h6"}>
 					NY’s Cellar Door Specialist For Ten Years Commercial Or
 					Residential flat or sloped, stock size or custom made.
 				</Typography>
@@ -77,6 +78,10 @@ export default function Home() {
 						})}
 				</Grid>
 			</StandardContainer>
+
+			<br />
+			<br />
+			<Map />
 		</div>
 	);
 }
@@ -87,25 +92,27 @@ function MediaCard({ times }) {
 	const doors = Array(times).fill("door").join(",");
 	return (
 		<Card className={classes.root}>
-			<CardActionArea>
-				<CardMedia
-					className={classes.media}
-					image={"https://source.unsplash.com/1600x900/?" + doors}
-					title={faker.random.word() + " door"}
-				/>
-				<CardContent>
-					<Typography gutterBottom variant="h5" component="h2">
-						{faker.random.word()} doors
-					</Typography>
-					<Typography
-						variant="body2"
-						color="textSecondary"
-						component="p"
-					>
-						{faker.random.words(6)}
-					</Typography>
-				</CardContent>
-			</CardActionArea>
+			<Link href={"/gallery"}>
+				<CardActionArea>
+					<CardMedia
+						className={classes.media}
+						image={"https://source.unsplash.com/1600x900/?" + doors}
+						title={faker.random.word() + " door"}
+					/>
+					<CardContent>
+						<Typography gutterBottom variant="h5" component="h2">
+							{faker.random.word()} doors
+						</Typography>
+						<Typography
+							variant="body2"
+							color="textSecondary"
+							component="p"
+						>
+							{faker.random.words(6)}
+						</Typography>
+					</CardContent>
+				</CardActionArea>
+			</Link>
 			<CardActions>
 				<Button size="small" color="primary">
 					Learn More
