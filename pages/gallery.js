@@ -22,7 +22,9 @@ const useStyles = makeStyles(theme => ({
 	description: {
 		textAlign: "center",
 		position: "absolute",
-		bottom: 20,
+		bottom: 0,
+		height: "20%",
+		background: `rgba(0, 0, 0, 0.4)`,
 		color: "white",
 		width: "100%",
 		fontFamily: theme.typography.fontFamily
@@ -32,13 +34,13 @@ const useStyles = makeStyles(theme => ({
 function Gallery(props) {
 	const items = [
 		{
-			name: "Random Name #1",
-			description: "Probably the most random thing you have ever seen!",
+			name: faker.random.words(3),
+			description: faker.lorem.words(12),
 			img: "https://source.unsplash.com/1600x900/?doors"
 		},
 		{
-			name: "Random Name #2",
-			description: "Hello World!",
+			name: faker.random.words(3),
+			description: faker.lorem.words(12),
 			img: "https://source.unsplash.com/1600x900/?door"
 		}
 	];
@@ -60,7 +62,7 @@ function Gallery(props) {
 				</Typography>
 				<br />
 				<Typography paragraph style={{ textAlign: "center" }}>
-					{faker.random.words(50)}
+					{faker.lorem.words(160)}
 				</Typography>
 			</StandardContainer>
 		</div>
@@ -81,8 +83,6 @@ function Item(props) {
 				<h2>{props.item.name}</h2>
 				<p>{props.item.description}</p>
 			</div>
-
-			<Button className="CheckButton">Check it out!</Button>
 		</Paper>
 	);
 }
